@@ -13,11 +13,17 @@ AccessMatrix.prototype = {
             }
         }).bind(this));
 
-        FileStream.readFile('data/permission.json','utf-8',(function(err, permission){
-            if(err){
-                console.log(err);
-            }else{
-                this._permission = JSON.parse(permission);
+        FileStream.exists('data/permission.json', (function(exists) {
+            if (exists) {
+                FileStream.readFile('data/permission.json','utf-8',(function(err, permission){
+                    this._permission = JSON.parse(permission);
+                }).bind(this));
+            } else {
+                FileStream.writeFile("data/permission.json", "{\"roles\": []}", {encoding: 'utf8'}, (function() {
+                    FileStream.readFile('data/permission.json','utf-8',(function(err, permission){
+                        this._permission = JSON.parse(permission);
+                    }).bind(this));
+                }).bind(this));
             }
         }).bind(this));
     },
