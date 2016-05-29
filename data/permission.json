@@ -6,6 +6,27 @@
         {
           "path": "/data/user/*",
           "desc": "用户管理",
+          "POST": true,
+          "GET": true,
+          "PUT": false,
+          "DELETE": false
+        },
+        {
+          "path": "/data/role/*",
+          "desc": "用户组管理",
+          "POST": true,
+          "GET": true,
+          "PUT": false,
+          "DELETE": false
+        }
+      ]
+    },
+    {
+      "role": 1,
+      "permissions": [
+        {
+          "path": "/data/user/*",
+          "desc": "用户管理",
           "POST": false,
           "GET": true,
           "PUT": false,
@@ -15,7 +36,15 @@
           "path": "/data/role/*",
           "desc": "用户组管理",
           "POST": false,
-          "GET": true,
+          "GET": false,
+          "PUT": true,
+          "DELETE": false
+        },
+        {
+          "path": "/authentication/*",
+          "desc": "权限管理",
+          "POST": false,
+          "GET": false,
           "PUT": false,
           "DELETE": false
         }

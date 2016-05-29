@@ -51,32 +51,35 @@ AccessMatrix.prototype = {
     },
     
     getPermission: function (roleId) {
-        var permission = null;
+        var permission = {
+            "role": roleId,
+            "permissions": []
+        };
+
+        for (var i=0;i<this._apiSet.restAPI.length;i++) {
+            var api = this._apiSet.restAPI[i];
+            var access = Class.extend({}, api);
+            access.GET = false;
+            access.PUT = false;
+            access.POST = false;
+            access.DELETE = false;
+            permission.permissions.push(access);
+        }
 
         for (var i=0;i<this._permission.roles.length;i++) {
             var role = this._permission.roles[i];
             if (role.role == roleId) {
-                permission = this._permission.roles[i];
+                var perms = this._permission.roles[i].permissions;
+                for (var j=0;j<perms.length;j++) {
+                    permission.permissions[j].GET = perms[j].GET;
+                    permission.permissions[j].PUT = perms[j].PUT;
+                    permission.permissions[j].POST = perms[j].POST;
+                    permission.permissions[j].DELETE = perms[j].DELETE;
+                }
                 break;
             }
         }
 
-        if (!permission) {
-            permission = {
-                "role": roleId,
-                "permissions": []
-            };
-
-            for (var i=0;i<this._apiSet.restAPI.length;i++) {
-                var api = this._apiSet.restAPI[i];
-                var access = Class.extend({}, api);
-                access.GET = false;
-                access.PUT = false;
-                access.POST = false;
-                access.DELETE = false;
-                permission.permissions.push(access);
-            }
-        }
 
         return permission;
     }
