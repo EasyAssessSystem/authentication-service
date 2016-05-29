@@ -1,0 +1,6 @@
+{
+  "restAPI": [
+    {"path":"/data/user/*", "desc":"用户管理"},
+    {"path":"/data/role/*", "desc":"用户组管理"}
+  ]
+}

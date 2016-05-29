@@ -1,0 +1,25 @@
+{
+  "roles": [
+    {
+      "role": 3,
+      "permissions": [
+        {
+          "path": "/data/user/*",
+          "desc": "用户管理",
+          "POST": false,
+          "GET": true,
+          "PUT": false,
+          "DELETE": false
+        },
+        {
+          "path": "/data/role/*",
+          "desc": "用户组管理",
+          "POST": false,
+          "GET": true,
+          "PUT": false,
+          "DELETE": false
+        }
+      ]
+    }
+  ]
+}
