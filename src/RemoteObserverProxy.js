@@ -10,6 +10,18 @@ RemoteObserverProxy.prototype = {
     },
 
     load: function(callback) {
+        FileStream.exists('data/observers.json', (function(exists) {
+            if (exists) {
+                this.loadFromFile(callback);
+            } else {
+                FileStream.writeFile("data/observers.json", "{}", {encoding: 'utf8'}, (function() {
+                    this.loadFromFile(callback);
+                }).bind(this));
+            }
+        }).bind(this));
+    },
+
+    loadFromFile: function(callback) {
         FileStream.readFile('data/observers.json','utf-8',(function(err, observers){
             try {
                 if(err){
