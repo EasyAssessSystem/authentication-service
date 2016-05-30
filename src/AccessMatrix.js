@@ -29,7 +29,13 @@ AccessMatrix.prototype = {
     },
 
     getAccessPermissions: function() {
-        return this._permission;
+        var permissions = {
+            roles:[]
+        }
+        for (var i=0;i<this._permission.roles.length;i++) {
+            permissions.roles.push(this.getPermission(this._permission.roles[i].role))
+        }
+        return permissions;
     },
 
     updatePermission: function (permission, callback) {
@@ -77,6 +83,7 @@ AccessMatrix.prototype = {
             if (role.role == roleId) {
                 var perms = this._permission.roles[i].permissions;
                 for (var j=0;j<perms.length;j++) {
+                    if (!permission.permissions[j]) continue;
                     permission.permissions[j].GET = perms[j].GET;
                     permission.permissions[j].PUT = perms[j].PUT;
                     permission.permissions[j].POST = perms[j].POST;

@@ -1,7 +1,7 @@
 {
   "restAPI": [
-    {"path":"/data/user/*", "desc":"用户管理"},
-    {"path":"/data/role/*", "desc":"用户组管理"},
+    {"path":"/data/user/*", "desc":"用户管理", "menuRef":"user"},
+    {"path":"/data/role/*", "desc":"用户组管理", "menuRef":"role"},
     {"path":"/authentication/*", "desc":"权限管理"}
   ]
 }
