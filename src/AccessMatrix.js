@@ -75,6 +75,9 @@ AccessMatrix.prototype = {
             access.PUT = false;
             access.POST = false;
             access.DELETE = false;
+            if (access.component) {
+                access.USABILITY = false;
+            }
             permission.permissions.push(access);
         }
 
@@ -88,6 +91,9 @@ AccessMatrix.prototype = {
                     permission.permissions[j].PUT = perms[j].PUT;
                     permission.permissions[j].POST = perms[j].POST;
                     permission.permissions[j].DELETE = perms[j].DELETE;
+                    if (permission.permissions[j].component && perms[j].USABILITY) {
+                        permission.permissions[j].USABILITY = true;
+                    }
                 }
                 break;
             }
