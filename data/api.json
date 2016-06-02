@@ -2,7 +2,7 @@
   "restAPI": [
     {"path":"/data/user/*", "desc":"用户管理", "component":"user"},
     {"path":"/data/role/*", "desc":"用户组管理", "component":"role"},
-    {"path":"/data/cdc/*", "desc":"机构管理", "component":"cdc"},
+    {"path":"/data/ministry/*", "desc":"机构管理", "component":"health_ministry"},
     {"path":"/data/template/*", "desc":"模版管理", "component":"template"},
     {"path":"/authentication/*", "desc":"权限管理"}
   ]
