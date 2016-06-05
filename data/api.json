@@ -5,7 +5,7 @@
     {"path":"/data/ministry/*", "desc":"机构管理", "component":"health_ministry"},
     {"path":"/data/assaycatgory/*", "desc":"检测类别管理", "component":"assay_category"},
     {"path":"/data/codegroup/*", "desc":"代码组管理", "component":"code_group"},
-    {"path":"/data/code/*", "desc":"代码管理", "component":"code"},
+    {"path":"/data/code/*", "desc":"代码管理", "component":"assay_code"},
     {"path":"/data/template/*", "desc":"模版管理", "component":"template"},
     {"path":"/authentication/*", "desc":"权限管理"}
   ]
