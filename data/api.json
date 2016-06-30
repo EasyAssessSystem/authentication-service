@@ -8,6 +8,7 @@
     {"path":"/data/code/*", "desc":"代码管理", "component":"assay_code"},
     {"path":"/data/template/*", "desc":"模版管理", "component":"template"},
     {"path":"/data/assessment/*","desc":"考评管理","component":"assessment"},
+    {"path":"/data/myassessment/*","desc":"我的考评","component":"myassessment"},
     {"path":"/authentication/*", "desc":"权限管理"}
   ]
 }
