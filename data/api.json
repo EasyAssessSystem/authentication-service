@@ -7,8 +7,9 @@
     {"path":"/data/codegroup/*", "desc":"代码组管理", "component":"code_group"},
     {"path":"/data/code/*", "desc":"代码管理", "component":"assay_code"},
     {"path":"/data/template/*", "desc":"模版管理", "component":"template"},
-    {"path":"/assess/assessment/${^(?!activated).*$}/*","desc":"考评管理","component":"assessment"},
-    {"path":"/assess/assessment/${^(activated).*$}/*","desc":"我的考评","component":"myassessment"},
+    {"path":"/assess/assessment/*","desc":"考评管理","component":"assessment"},
+    {"path":"/assess/form/*","desc":"我的考评","component":"activated_form"},
+    {"path":"/assess/form/*","desc":"考评历史","component":"closed_form"},
     {"path":"/authentication/*", "desc":"权限管理"}
   ]
 }
