@@ -11,6 +11,7 @@
     {"path":"/assess/form/*","desc":"我的考评","component":"activated_form"},
     {"path":"/assess/form/*","desc":"考评历史","component":"closed_form"},
     {"path":"/iqc/template/*","desc":"IQC模板","component":"iqc_template"},
+    {"path":"/iqc/plan/*","desc":"质控历史","component":"plan"},
     {"path":"/authentication/*", "desc":"权限管理"}
   ]
 }
