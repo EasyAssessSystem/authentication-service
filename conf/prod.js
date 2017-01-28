@@ -1,7 +1,7 @@
 module.exports = {
-    "host": "127.0.0.1",
+    "host": process.env.ES_AUTHENTICATION_SERVER,
     "port": 1337,
-    "secureMode": true,
+    "secureMode": false,
     "allowed": [
         '127.0.0.1'
     ]
