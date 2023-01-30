@@ -1,0 +1,21 @@
+version: 2.1
+
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/node:10.22.0
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 20.10.14
+          docker_layer_caching: true
+      - run:
+          name: Build docker image
+          command: ./buildtask/docker-build.sh
+      - run:
+          name: Push docker image
+          command: ./buildtask/docker-push.sh
+workflows:
+  auth-svc-pipeline:
+    jobs:
+      - build-and-test
